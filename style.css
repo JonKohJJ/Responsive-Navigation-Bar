@@ -1,0 +1,42 @@
+/* reset the default browser settings to none */
+*{
+    margin: 0px;
+    padding 0px;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;                      /* Horizontally aligns each child element (logo class and the unordered list) in the parent element, which is the nav element  */
+    justify-content: space-around; 
+    align-items: center;                /* aligning the nav bar vertically */
+    min-height: 10vh;                   /* giving the nav bar top room to breath */
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo{
+    color: orange;
+    text-transform: uppercase;
+    letter-spacing: 4px; 
+    font-size: 22px;
+}
+
+.nav-links{
+    display: flex;                      /* horizontally aligning all li elements in the ul */
+    justify-content: space-around;      /* this will NOT change anything if the line below doesnt exist */
+    width: 30%;                         /* play around with this percentage */
+}
+
+.nav-links a{                           /* all the anchor tags in the class nav-links */
+    color: orange;
+    text-decoration: none;   
+    letter-spacing: 3px;     
+    font-weight: 500; 
+}
+
+.nav-links li{                          /* all the li tags in the class nav-links */
+    list-style: none;
+}
+
+
+
