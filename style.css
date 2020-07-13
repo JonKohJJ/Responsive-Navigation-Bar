@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+body{
+    background-image: url('bg.jpg');
+}
+
 nav{
     display: flex;                      /* Horizontally aligns each child element (logo class and the unordered list) in the parent element, which is the nav element  */
     justify-content: space-around; 
@@ -39,4 +43,74 @@ nav{
 }
 
 
+/* END OF NON-RESPONSIVENESS NAV BAR */
 
+.burger{
+    display: none                       /* do not display the hurger */
+}
+
+.burger div{                           /*  all the divs in the burger */
+    width: 25px;
+    height: 2px;
+    background-color: orange;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width:768px){    /* the max width is set to 768 px becuase it is the width of a tablet */
+    body{
+        overflow: hidden;               /* ensure that scrolling side ways is not allowed */
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;                     /* forces evrything to the right */
+        height: 92vh;                   /* so it spans the entire screen height */
+        top: 10vh;                      /* same as the min-height attribute of the nav, so it sits deirectly below the nav bar*/
+        background-color: black;    
+        display: flex;                  
+        flex-direction: column;         /* changes the flex direction to vertical instead of horizontal */
+        align-items: center;            /* aligning the li to the center of the drop down*/
+        width: 50%;                     /* play with the width of the drop down to see what you like*/
+        transform: translateX(100%);    /* make sure this drop down is not displayed by moving it off screen until after toggling the burger */
+        transition: transform 0.5s ease-in;
+    }
+    .burger{                            
+        display: block;                 /* display burger when the max-width is reached */
+        cursor: pointer;                /* give it a pointer when hovered over */
+        
+    }
+    .nav-links li{                      /* you want the links to fade in hence, set opacity to 0 first */
+        opacity: 0;
+    }
+}
+
+
+/* toggle css */
+
+.nav-active{                            /* this class is to be toggle upon clicking the burger - see js */
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{                 /* this key frame is to be toggle upon clicking the burger - see js */
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+/* this class called 'toggle' is to be toggle upon clicking the burger - see js */
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+}
