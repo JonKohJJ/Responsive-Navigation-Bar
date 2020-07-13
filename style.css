@@ -7,6 +7,9 @@
 
 body{
     background-image: url('bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 nav{
@@ -14,7 +17,7 @@ nav{
     justify-content: space-around; 
     align-items: center;                /* aligning the nav bar vertically */
     min-height: 10vh;                   /* giving the nav bar top room to breath */
-    background-color: black;
+    /* background-color: black; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -67,7 +70,7 @@ nav{
         right: 0px;                     /* forces evrything to the right */
         height: 92vh;                   /* so it spans the entire screen height */
         top: 10vh;                      /* same as the min-height attribute of the nav, so it sits deirectly below the nav bar*/
-        background-color: black;    
+        /* background-color: black;     */
         display: flex;                  
         flex-direction: column;         /* changes the flex direction to vertical instead of horizontal */
         align-items: center;            /* aligning the li to the center of the drop down*/
